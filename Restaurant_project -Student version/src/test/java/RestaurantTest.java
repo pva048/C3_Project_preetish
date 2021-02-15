@@ -74,7 +74,7 @@ class RestaurantTest {
         setup();
         ArrayList<String> items = new ArrayList<String>();
         items.add("Invalid menu item");
-        assertThrows(itemNotFoundException.class,()-> restaurant.getOrderTotal(restaurant,items));
+        assertThrows(itemNotFoundException.class,()-> restaurant.getOrderTotal(items));
     }
     //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
