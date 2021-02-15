@@ -32,8 +32,5 @@ public class RestaurantService {
         return restaurants;
     }
 
-    public double returnOrderTotal(String[] itemName){
 
-        return 0.0;
-    }
 }

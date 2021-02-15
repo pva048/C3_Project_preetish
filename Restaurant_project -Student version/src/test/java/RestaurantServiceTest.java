@@ -43,24 +43,6 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    //TDD - When invalid restaurant object is passed then function should throw restaurant not found exception
-    //TDD - When invalid menu items are passed then function should throw item not found exception
-    @Test
-    public void passing_invalid_restaurant_object_should_throw_exception() throws RestaurantNotFoundException{
-        assertNull(restaurant);
-        String[] items = {"Sweet corn soup"};
-        assertThrows(RestaurantNotFoundException.class,()-> service.getOrderTotal(restaurant,items));
-    }
-
-    @Test
-    public void order_total_of_invalid_items_should_throw_exception() throws itemNotFoundException{
-        setup();
-        String[] items = {"invalid item"};
-        assertThrows(itemNotFoundException.class,()-> service.getOrderTotal(restaurant,items));
-    }
-    //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
     //>>>>>>>>>>>>>>>>>>>>>>ADMIN: ADDING & REMOVING RESTAURANTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void remove_restaurant_should_reduce_list_of_restaurants_size_by_1() throws RestaurantNotFoundException {

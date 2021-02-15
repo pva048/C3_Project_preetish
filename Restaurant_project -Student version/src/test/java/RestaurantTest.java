@@ -5,6 +5,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -65,4 +66,15 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+   //TDD - When invalid menu items are passed then function should throw item not found exception
+   @Test
+    public void order_total_of_invalid_items_should_throw_exception() throws itemNotFoundException{
+        setup();
+        ArrayList<String> items = new ArrayList<String>();
+        items.add("Invalid menu item");
+        assertThrows(itemNotFoundException.class,()-> restaurant.getOrderTotal(restaurant,items));
+    }
+    //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
