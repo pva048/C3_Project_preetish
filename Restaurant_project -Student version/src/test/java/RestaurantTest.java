@@ -76,5 +76,5 @@ class RestaurantTest {
         items.add("Invalid menu item");
         assertThrows(itemNotFoundException.class,()-> restaurant.getOrderTotal(items));
     }
-    //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+   //>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
